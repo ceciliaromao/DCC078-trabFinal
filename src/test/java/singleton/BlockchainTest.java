@@ -6,14 +6,14 @@ import java.util.List;
 
 public class BlockchainTest {
     @Test
-    public void deveRetornarMesmaInstancia() {
+    public void shouldReturnSameInstance() {
         Blockchain blockchain1 = Blockchain.getInstance();
         Blockchain blockchain2 = Blockchain.getInstance();
         assertSame(blockchain1, blockchain2);
     }
 
     @Test
-    public void deveConterGenesisBlock() {
+    public void shouldHaveGenesisBlock() {
         Blockchain blockchain = Blockchain.getInstance();
         List<Block> chain = blockchain.getChain();
         assertFalse(chain.isEmpty());
@@ -23,7 +23,7 @@ public class BlockchainTest {
     }
 
     @Test
-    public void deveAdicionarNovoBloco() {
+    public void shouldAddNewBlock() {
         Blockchain blockchain = Blockchain.getInstance();
         int initialSize = blockchain.getChain().size();
         blockchain.addBlock(new Block(1, "hash_genesis", "Transaction 1"));

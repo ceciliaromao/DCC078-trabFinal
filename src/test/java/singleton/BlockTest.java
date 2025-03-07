@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 
 public class BlockTest {
     @Test
-    public void deveGerarJsonCorreto() {
+    public void shouldReturnRightJson() {
         Block block = new Block(1, "hash_anterior", "Transação 1");
         Gson gson = new Gson();
         String jsonEsperado = gson.toJson(block);
